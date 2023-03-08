@@ -6,12 +6,13 @@ const server = new Hono();
 
 server.use('*', logger(), compress());
 server.get('/', serveStatic({ path: './index.html' }));
-server.use('/public/*', serveStatic({ root: './' }));
-server.get('/favicon.ico', serveStatic({ path: './public/favicon.ico' }));
-
-server.get('/:some/:what', (ctx) => {
-  const { some, what } = ctx.req.param();
-  return ctx.json({ some, what });
-});
+server.get(
+  '/public/*',
+  (ctx, next) => {
+    ctx.header('Cache-Control', 'public, max-age=47250000');
+    return next();
+  },
+  serveStatic({ root: './' })
+);
 
 serve(server.fetch);
