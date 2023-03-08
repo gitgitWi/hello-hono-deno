@@ -1,7 +1,9 @@
 {
   "tasks": {
-    "start": "deno run -A main.tsx",
-    "start:dev": "deno run -A --watch=main.tsx,apis/,features/ main.tsx"
+    "start": "deno run --allow-net --allow-read main.tsx",
+    "start:dev": "deno run -A --watch=main.tsx,apis/,features/ main.tsx",
+    "client:dev": "deno run -A --unstable --node-modules-dir npm:vite",
+    "client:build": "deno run -A --unstable --node-modules-dir npm:vite build"
   },
   "importMap": "./import_map.json"
 }
