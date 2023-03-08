@@ -3,5 +3,6 @@
   "deno.importMap": "./import_map.json",
   "deno.lint": true,
   "deno.suggest.autoImports": true,
-  "deno.suggest.paths": true
+  "deno.suggest.paths": true,
+  "deno.unstable": true
 }
