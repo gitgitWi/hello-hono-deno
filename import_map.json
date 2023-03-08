@@ -1,8 +1,0 @@
-{
-  "imports": {
-    "http": "https://deno.land/std@0.178.0/http",
-    "http/": "https://deno.land/std@0.178.0/http/",
-    "hono": "https://deno.land/x/hono@v3.0.2",
-    "hono/": "https://deno.land/x/hono@v3.0.2/"
-  }
-}
