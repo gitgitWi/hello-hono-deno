@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "start": "deno run -A main.ts",
+    "start:dev": "deno run -A --watch=main.ts,apis/,features/ main.ts"
+  },
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}
