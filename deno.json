@@ -1,9 +1,11 @@
 {
   "tasks": {
-    "start": "deno run --allow-net --allow-read main.tsx",
-    "start:dev": "deno run -A --watch=main.tsx,apis/,features/ main.tsx",
+    "start": "deno run --allow-net --allow-read ./apis/main.ts",
+    "server:dev": "deno run -A --watch=apis/ ./apis/main.ts",
     "client:dev": "deno run -A --unstable --node-modules-dir npm:vite",
     "client:build": "deno run -A --unstable --node-modules-dir npm:vite build"
   },
-  "importMap": "./import_map.json"
+  "compilerOptions": {
+    "lib": ["deno.window"]
+  }
 }
